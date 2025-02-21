@@ -27,13 +27,14 @@ public class GameRenderer extends NGRenderer {
         g.drawText(String.valueOf(curHeight), 5, 11, WHITE);
         g.drawText(String.valueOf(curHeight), 5, 10, BLACK);
 
+        emitter.draw(g);
         base.draw(g);
         framecount++;
     }
 
     public Color getColor(float n) {
-        if (n == Float.MIN_VALUE) return BLACK;
-        else if (n < 1) return new Color(0x696942);
+        if (n == Float.NEGATIVE_INFINITY) return BLACK;
+        else if (n < 1) return new Color(0x426942);
         else if (n < 18) return new Color(0x49 + (int) n * 10, 0x62, 0x42);
         else return new Color(0xFF4242);
         // if (n > 255) return WHITE;
